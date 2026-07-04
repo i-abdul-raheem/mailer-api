@@ -1,0 +1,17 @@
+{
+  "name": "mailer-api",
+  "version": "1.0.0",
+  "description": "Simple HTTP API for sending emails via Nodemailer",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.0"
+  }
+}
