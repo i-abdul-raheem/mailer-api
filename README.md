@@ -44,7 +44,7 @@ Supports plain text and HTML bodies, multiple recipients, CC/BCC, reply-to, and 
 Pull and run the pre-built image from Docker Hub:
 
 ```bash
-docker pull your-dockerhub-username/mailer-api:latest
+docker pull arhex0300/mailer-api:latest
 ```
 
 Configure the container using `--env-file` or individual `-e` flags (see [Configuration](#configuration)).
@@ -57,7 +57,7 @@ docker run -d \
   -p 3000:3000 \
   --env-file .env \
   --restart unless-stopped \
-  your-dockerhub-username/mailer-api:latest
+  arhex0300/mailer-api:latest
 ```
 
 **Option B — pass variables with `-e`:**
@@ -74,7 +74,7 @@ docker run -d \
   -e DEFAULT_FROM="My App <you@gmail.com>" \
   -e API_KEY=your-secret-key \
   --restart unless-stopped \
-  your-dockerhub-username/mailer-api:latest
+  arhex0300/mailer-api:latest
 ```
 
 Verify the service is up:
@@ -117,7 +117,7 @@ curl -X POST http://localhost:3000/send \
 ### Clone and run locally
 
 ```bash
-git clone https://github.com/your-username/mailer-api.git
+git clone https://github.com/i-abdul-raheem/mailer-api.git
 cd mailer-api
 cp .env.example .env
 # Edit .env with your SMTP credentials
@@ -130,7 +130,7 @@ The server starts on port `3000` (or the value set in `PORT`).
 ### Run with Docker Compose
 
 ```bash
-git clone https://github.com/your-username/mailer-api.git
+git clone https://github.com/i-abdul-raheem/mailer-api.git
 cd mailer-api
 cp .env.example .env
 # Edit .env with your SMTP credentials
@@ -217,7 +217,7 @@ docker run -d \
   -e API_KEY=your-secret-key \
   -e PORT=3000 \
   --restart unless-stopped \
-  your-dockerhub-username/mailer-api:latest
+  arhex0300/mailer-api:latest
 ```
 
 **Mix env file with overrides:**
@@ -229,7 +229,7 @@ docker run -d \
   --env-file .env \
   -e API_KEY=override-key-for-this-instance \
   --restart unless-stopped \
-  your-dockerhub-username/mailer-api:latest
+  arhex0300/mailer-api:latest
 ```
 
 **Read from the host shell** (avoids putting secrets on the command line):
@@ -244,7 +244,7 @@ docker run -d \
   -e DEFAULT_FROM \
   -e API_KEY \
   --restart unless-stopped \
-  your-dockerhub-username/mailer-api:latest
+  arhex0300/mailer-api:latest
 ```
 
 When `-e` is used without a value (`-e SMTP_HOST`), Docker passes through the variable from your host environment.
@@ -254,7 +254,7 @@ In **docker-compose.yml**, use the `environment` key the same way:
 ```yaml
 services:
   mailer:
-    image: your-dockerhub-username/mailer-api:latest
+    image: arhex0300/mailer-api:latest
     ports:
       - "3000:3000"
     environment:
@@ -512,7 +512,7 @@ The typical setup is to run the mailer as a sidecar or shared service on the sam
 ```yaml
 services:
   mailer:
-    image: your-dockerhub-username/mailer-api:latest
+    image: arhex0300/mailer-api:latest
     env_file:
       - ./mailer.env
     restart: unless-stopped
@@ -539,7 +539,7 @@ docker run -d \
   --network app-network \
   --env-file .env \
   --restart unless-stopped \
-  your-dockerhub-username/mailer-api:latest
+  arhex0300/mailer-api:latest
 
 # Run your app on the same network
 docker run -d \
@@ -561,7 +561,7 @@ docker run -d \
   --health-retries=3 \
   -p 3000:3000 \
   --env-file .env \
-  your-dockerhub-username/mailer-api:latest
+  arhex0300/mailer-api:latest
 ```
 
 Or in `docker-compose.yml`:
@@ -569,7 +569,7 @@ Or in `docker-compose.yml`:
 ```yaml
 services:
   mailer:
-    image: your-dockerhub-username/mailer-api:latest
+    image: arhex0300/mailer-api:latest
     env_file:
       - .env
     healthcheck:
@@ -633,19 +633,19 @@ The server reloads automatically when you change `src/index.js`.
 docker login
 
 # Build the image
-docker build -t your-dockerhub-username/mailer-api:latest .
+docker build -t arhex0300/mailer-api:latest .
 
 # Tag with a version (recommended)
-docker tag your-dockerhub-username/mailer-api:latest your-dockerhub-username/mailer-api:1.0.0
+docker tag arhex0300/mailer-api:latest arhex0300/mailer-api:1.0.0
 
 # Push both tags
-docker push your-dockerhub-username/mailer-api:latest
-docker push your-dockerhub-username/mailer-api:1.0.0
+docker push arhex0300/mailer-api:latest
+docker push arhex0300/mailer-api:1.0.0
 ```
 
 ### 3. Configure the Docker Hub repository page
 
-On your repository page at `https://hub.docker.com/r/your-dockerhub-username/mailer-api`:
+On your repository page at `https://hub.docker.com/r/arhex0300/mailer-api`:
 
 1. **Short description** — paste the contents of [`docs/docker-hub-overview.md`](docs/docker-hub-overview.md) (first paragraph)
 2. **Full description** — link your GitHub repository under **Settings → GitHub Repository** so Docker Hub displays this README automatically
@@ -679,8 +679,8 @@ jobs:
         with:
           push: true
           tags: |
-            your-dockerhub-username/mailer-api:latest
-            your-dockerhub-username/mailer-api:${{ github.ref_name }}
+            arhex0300/mailer-api:latest
+            arhex0300/mailer-api:${{ github.ref_name }}
 ```
 
 Store `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` in your GitHub repository secrets.
@@ -696,7 +696,7 @@ git init
 git add .
 git commit -m "Initial commit: Mailer API service"
 git branch -M main
-git remote add origin https://github.com/your-username/mailer-api.git
+git remote add origin https://github.com/i-abdul-raheem/mailer-api.git
 git push -u origin main
 ```
 

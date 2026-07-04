@@ -45,7 +45,7 @@ notifications
 Display this on your repository overview:
 
 ```bash
-docker pull your-dockerhub-username/mailer-api:latest
+docker pull arhex0300/mailer-api:latest
 ```
 
 ---
@@ -60,7 +60,7 @@ docker run -d \
   -p 3000:3000 \
   --env-file .env \
   --restart unless-stopped \
-  your-dockerhub-username/mailer-api:latest
+  arhex0300/mailer-api:latest
 ```
 
 **With `-e` flags:**
@@ -77,9 +77,9 @@ docker run -d \
   -e DEFAULT_FROM="My App <you@gmail.com>" \
   -e API_KEY=your-secret-key \
   --restart unless-stopped \
-  your-dockerhub-username/mailer-api:latest
+  arhex0300/mailer-api:latest
 ```
 
 Required environment variables: `SMTP_HOST`, `SMTP_USER`, `SMTP_PASS`, `DEFAULT_FROM`.
 
-See the [GitHub README](https://github.com/your-username/mailer-api) for the full configuration reference and API documentation.
+See the [GitHub README](https://github.com/i-abdul-raheem/mailer-api) for the full configuration reference and API documentation.
