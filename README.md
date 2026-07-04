@@ -4,6 +4,8 @@ A lightweight, self-hosted HTTP service for sending emails from your application
 
 Supports plain text and HTML bodies, multiple recipients, CC/BCC, reply-to, and file attachments (base64-encoded).
 
+**Docker Hub:** [arhex0300/mailer-api](https://hub.docker.com/r/arhex0300/mailer-api)
+
 ---
 
 ## Table of contents
@@ -41,7 +43,7 @@ Supports plain text and HTML bodies, multiple recipients, CC/BCC, reply-to, and 
 
 ## Quick start (Docker Hub)
 
-Pull and run the pre-built image from Docker Hub:
+Pull and run the pre-built image from [Docker Hub](https://hub.docker.com/r/arhex0300/mailer-api):
 
 ```bash
 docker pull arhex0300/mailer-api:latest
